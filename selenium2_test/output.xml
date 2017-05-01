@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20160109 15:22:20.099" generator="Robot 2.9.2 (Python 2.7.11 on win32)">
+<suite source="C:\Users\Wladislaw Wagner\Documents\selenium2_test\test.robot" id="s1" name="Test">
+<test id="s1-t1" name="selenium2test without java installed">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.google.de</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20160109 15:22:20.248" level="INFO">Opening browser 'chrome' to base url 'http://www.google.de'</msg>
+<status status="PASS" endtime="20160109 15:22:23.605" starttime="20160109 15:22:20.248"></status>
+</kw>
+<status status="PASS" endtime="20160109 15:22:23.608" critical="yes" starttime="20160109 15:22:20.244"></status>
+</test>
+<status status="PASS" endtime="20160109 15:22:23.624" starttime="20160109 15:22:20.103"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Test" pass="1">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

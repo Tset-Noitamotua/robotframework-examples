@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite failures="0" skip="0" tests="10" name="Robotframework" errors="0">
+<testcase classname="Robotframework.Quickstart.Quickstart" name="User can create an account and log in" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="User cannot log in with bad password" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="User can change password" time="1">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="User status is stored in database" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="Too short password" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="Too long password" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="Password without lowercase letters" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="Password without capital letters" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="Password without numbers" time="0">
+</testcase>
+<testcase classname="Robotframework.Quickstart.Quickstart" name="Password with special characters" time="0">
+</testcase>
+</testsuite>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20151116 23:37:31.146" generator="Robot 2.9.2 (Python 2.7.6 on win32)">
+<suite source="C:\_GITHUB\robotframework-examples\s2l_test.robot" id="s1" name="S2L Test">
+<test id="s1-t1" name="001 Simple Chrome Test">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.google.com</arg>
+<arg>chrome</arg>
+</arguments>
+<msg timestamp="20151116 23:37:31.727" level="TRACE">Arguments: [ 'http://www.google.com' | 'chrome' ]</msg>
+<msg timestamp="20151116 23:37:31.728" level="INFO">Opening browser 'chrome' to base url 'http://www.google.com'</msg>
+<msg timestamp="20151116 23:37:32.334" level="DEBUG">POST http://127.0.0.1:52693/session {"desiredCapabilities": {"platform": "ANY", "browserName": "chrome", "version": "", "javascriptEnabled": true, "chromeOptions": {"args": [], "extensions": []}}}</msg>
+<msg timestamp="20151116 23:37:36.658" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:36.660" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/timeouts/async_script {"sessionId": "b29eb643374b88476e220ec51b2a8d7f", "ms": 5000.0}</msg>
+<msg timestamp="20151116 23:37:36.665" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:36.667" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/timeouts/implicit_wait {"sessionId": "b29eb643374b88476e220ec51b2a8d7f", "ms": 0.0}</msg>
+<msg timestamp="20151116 23:37:36.671" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:36.672" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/url {"url": "http://www.google.com", "sessionId": "b29eb643374b88476e220ec51b2a8d7f"}</msg>
+<msg timestamp="20151116 23:37:41.981" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:41.983" level="DEBUG">Opened browser with session id b29eb643374b88476e220ec51b2a8d7f</msg>
+<msg timestamp="20151116 23:37:41.985" level="TRACE">Return: 1</msg>
+<status status="PASS" endtime="20151116 23:37:41.986" starttime="20151116 23:37:31.726"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//input[@id='lst-ib']</arg>
+</arguments>
+<msg timestamp="20151116 23:37:41.990" level="TRACE">Arguments: [ "xpath=//input[@id='lst-ib']" ]</msg>
+<msg timestamp="20151116 23:37:41.991" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//input[@id='lst-ib']"}</msg>
+<msg timestamp="20151116 23:37:42.038" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.039" level="DEBUG">GET http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/element/0.8577551273629069-1/displayed {"sessionId": "b29eb643374b88476e220ec51b2a8d7f", "id": "0.8577551273629069-1"}</msg>
+<msg timestamp="20151116 23:37:42.084" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.085" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:37:42.086" starttime="20151116 23:37:41.989"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id='lst-ib']</arg>
+<arg>I Love Python</arg>
+</arguments>
+<msg timestamp="20151116 23:37:42.089" level="TRACE">Arguments: [ "xpath=//input[@id='lst-ib']" | 'I Love Python' ]</msg>
+<msg timestamp="20151116 23:37:42.089" level="INFO">Typing text 'I Love Python' into text field 'xpath=//input[@id='lst-ib']'</msg>
+<msg timestamp="20151116 23:37:42.090" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//input[@id='lst-ib']"}</msg>
+<msg timestamp="20151116 23:37:42.132" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.133" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/element/0.8577551273629069-1/clear {"sessionId": "b29eb643374b88476e220ec51b2a8d7f", "id": "0.8577551273629069-1"}</msg>
+<msg timestamp="20151116 23:37:42.183" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.184" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/element/0.8577551273629069-1/value {"sessionId": "b29eb643374b88476e220ec51b2a8d7f", "id": "0.8577551273629069-1", "value": ["I", " ", "L", "o", "v", "e", " ", "P", "y", "t", "h", "o", "n"]}</msg>
+<msg timestamp="20151116 23:37:42.438" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.439" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:37:42.440" starttime="20151116 23:37:42.087"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>id=lst-ib</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20151116 23:37:42.443" level="TRACE">Arguments: [ 'id=lst-ib' | 'ENTER' ]</msg>
+<msg timestamp="20151116 23:37:42.444" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "id", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "lst-ib"}</msg>
+<msg timestamp="20151116 23:37:42.573" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.574" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/element/0.8577551273629069-1/value {"sessionId": "b29eb643374b88476e220ec51b2a8d7f", "id": "0.8577551273629069-1", "value": ["E", "N", "T", "E", "R"]}</msg>
+<msg timestamp="20151116 23:37:42.720" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:42.721" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:37:42.722" starttime="20151116 23:37:42.441"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>I Love Python</arg>
+</arguments>
+<msg timestamp="20151116 23:37:42.726" level="TRACE">Arguments: [ 'I Love Python' ]</msg>
+<msg timestamp="20151116 23:37:42.727" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:42.801" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:43.004" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:43.061" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:43.262" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:43.299" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:43.499" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:43.533" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:43.734" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:43.769" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:43.970" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:44.005" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:44.207" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:44.241" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:44.442" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:44.478" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:44.679" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:44.715" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:44.916" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:44.950" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:45.150" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:45.184" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:45.386" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:45.431" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:45.632" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:45.665" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:45.866" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:45.899" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:46.100" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:46.134" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:46.336" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:46.370" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:46.571" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:46.605" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:46.806" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:46.840" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:47.040" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:47.073" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:47.274" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:47.320" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:47.523" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:47.557" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:47.757" level="DEBUG">POST http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/elements {"using": "xpath", "sessionId": "b29eb643374b88476e220ec51b2a8d7f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:37:47.796" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20151116 23:37:47.798" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20151116 23:37:47.803" level="DEBUG">GET http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f/screenshot {"sessionId": "b29eb643374b88476e220ec51b2a8d7f"}</msg>
+<msg timestamp="20151116 23:37:48.153" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:48.156" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20151116 23:37:48.157" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:37:48.159" starttime="20151116 23:37:47.797"></status>
+</kw>
+<msg timestamp="20151116 23:37:48.163" level="FAIL">Text 'I Love Python' did not appear in 5 seconds</msg>
+<msg timestamp="20151116 23:37:48.164" level="DEBUG">Traceback (most recent call last):
+  File "&lt;decorator-gen-156&gt;", line 2, in wait_until_page_contains
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\keywordgroup.py", line 15, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\_waiting.py", line 46, in wait_until_page_contains
+    self._wait_until(timeout, error, self._is_text_present, text)
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\_waiting.py", line 231, in _wait_until
+    self._wait_until_no_error(timeout, wait_func)
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\_waiting.py", line 240, in _wait_until_no_error
+    raise AssertionError(timeout_error)</msg>
+<status status="FAIL" endtime="20151116 23:37:48.165" starttime="20151116 23:37:42.724"></status>
+</kw>
+<status status="FAIL" endtime="20151116 23:37:48.167" critical="yes" starttime="20151116 23:37:31.723">Text 'I Love Python' did not appear in 5 seconds</status>
+</test>
+<test id="s1-t2" name="002 Simple Firefox Test">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.google.com</arg>
+<arg>firefox</arg>
+</arguments>
+<msg timestamp="20151116 23:37:48.174" level="TRACE">Arguments: [ 'http://www.google.com' | 'firefox' ]</msg>
+<msg timestamp="20151116 23:37:48.175" level="INFO">Opening browser 'firefox' to base url 'http://www.google.com'</msg>
+<msg timestamp="20151116 23:37:55.041" level="DEBUG">POST http://127.0.0.1:52741/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "firefox", "version": "", "marionette": false, "javascriptEnabled": true}}</msg>
+<msg timestamp="20151116 23:37:55.554" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:55.555" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/timeouts/async_script {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "ms": 5000.0}</msg>
+<msg timestamp="20151116 23:37:55.594" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:55.596" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/timeouts/implicit_wait {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "ms": 0.0}</msg>
+<msg timestamp="20151116 23:37:55.625" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:37:55.627" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/url {"url": "http://www.google.com", "sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f"}</msg>
+<msg timestamp="20151116 23:38:00.116" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:00.117" level="DEBUG">Opened browser with session id bad15ffe-767a-4c5b-87e8-4f4d4391d23f</msg>
+<msg timestamp="20151116 23:38:00.118" level="TRACE">Return: 2</msg>
+<status status="PASS" endtime="20151116 23:38:00.119" starttime="20151116 23:37:48.173"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>xpath=//input[@id='lst-ib']</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20151116 23:38:00.123" level="TRACE">Arguments: [ "xpath=//input[@id='lst-ib']" | '10' ]</msg>
+<msg timestamp="20151116 23:38:00.124" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/elements {"using": "xpath", "sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "value": "//input[@id='lst-ib']"}</msg>
+<msg timestamp="20151116 23:38:00.426" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:00.427" level="DEBUG">GET http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/element/{6f561df3-499e-4bb6-92da-8f7b4dd64364}/displayed {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "id": "{6f561df3-499e-4bb6-92da-8f7b4dd64364}"}</msg>
+<msg timestamp="20151116 23:38:00.466" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:00.467" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:00.468" starttime="20151116 23:38:00.121"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id='lst-ib']</arg>
+<arg>I Love Python</arg>
+</arguments>
+<msg timestamp="20151116 23:38:00.478" level="TRACE">Arguments: [ "xpath=//input[@id='lst-ib']" | 'I Love Python' ]</msg>
+<msg timestamp="20151116 23:38:00.478" level="INFO">Typing text 'I Love Python' into text field 'xpath=//input[@id='lst-ib']'</msg>
+<msg timestamp="20151116 23:38:00.480" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/elements {"using": "xpath", "sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "value": "//input[@id='lst-ib']"}</msg>
+<msg timestamp="20151116 23:38:00.523" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:00.524" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/element/{6f561df3-499e-4bb6-92da-8f7b4dd64364}/clear {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "id": "{6f561df3-499e-4bb6-92da-8f7b4dd64364}"}</msg>
+<msg timestamp="20151116 23:38:00.569" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:00.570" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/element/{6f561df3-499e-4bb6-92da-8f7b4dd64364}/value {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "id": "{6f561df3-499e-4bb6-92da-8f7b4dd64364}", "value": ["I", " ", "L", "o", "v", "e", " ", "P", "y", "t", "h", "o", "n"]}</msg>
+<msg timestamp="20151116 23:38:01.395" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:01.396" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:01.397" starttime="20151116 23:38:00.476"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>id=lst-ib</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20151116 23:38:01.415" level="TRACE">Arguments: [ 'id=lst-ib' | 'ENTER' ]</msg>
+<msg timestamp="20151116 23:38:01.417" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/elements {"using": "id", "sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "value": "lst-ib"}</msg>
+<msg timestamp="20151116 23:38:03.083" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:03.084" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/element/{6f561df3-499e-4bb6-92da-8f7b4dd64364}/value {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "id": "{6f561df3-499e-4bb6-92da-8f7b4dd64364}", "value": ["E", "N", "T", "E", "R"]}</msg>
+<msg timestamp="20151116 23:38:03.243" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:03.243" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:03.244" starttime="20151116 23:38:01.411"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>I Love Python</arg>
+</arguments>
+<msg timestamp="20151116 23:38:03.247" level="TRACE">Arguments: [ 'I Love Python' ]</msg>
+<msg timestamp="20151116 23:38:03.249" level="DEBUG">POST http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/elements {"using": "xpath", "sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:03.430" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:03.431" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:03.432" starttime="20151116 23:38:03.246"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20151116 23:38:03.436" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20151116 23:38:03.442" level="DEBUG">GET http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f/screenshot {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f"}</msg>
+<msg timestamp="20151116 23:38:04.032" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:04.039" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20151116 23:38:04.040" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:04.041" starttime="20151116 23:38:03.434"></status>
+</kw>
+<kw name="Close All Browsers" library="Selenium2Library">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<msg timestamp="20151116 23:38:04.045" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20151116 23:38:04.046" level="DEBUG">Closing all browsers</msg>
+<msg timestamp="20151116 23:38:04.047" level="DEBUG">DELETE http://127.0.0.1:52693/session/b29eb643374b88476e220ec51b2a8d7f {"sessionId": "b29eb643374b88476e220ec51b2a8d7f"}</msg>
+<msg timestamp="20151116 23:38:04.196" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:05.642" level="DEBUG">DELETE http://127.0.0.1:52741/hub/session/bad15ffe-767a-4c5b-87e8-4f4d4391d23f {"sessionId": "bad15ffe-767a-4c5b-87e8-4f4d4391d23f"}</msg>
+<msg timestamp="20151116 23:38:05.658" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:05.894" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:05.895" starttime="20151116 23:38:04.043"></status>
+</kw>
+<status status="PASS" endtime="20151116 23:38:05.897" critical="yes" starttime="20151116 23:37:48.171"></status>
+</test>
+<test id="s1-t3" name="003 Simple PhantomJS Test">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>http://www.google.com</arg>
+<arg>phantomjs</arg>
+</arguments>
+<msg timestamp="20151116 23:38:05.905" level="TRACE">Arguments: [ 'http://www.google.com' | 'phantomjs' ]</msg>
+<msg timestamp="20151116 23:38:05.905" level="INFO">Opening browser 'phantomjs' to base url 'http://www.google.com'</msg>
+<msg timestamp="20151116 23:38:08.059" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session {"desiredCapabilities": {"platform": "ANY", "browserName": "phantomjs", "version": "", "javascriptEnabled": true}}</msg>
+<msg timestamp="20151116 23:38:08.098" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.099" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/timeouts/async_script {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "ms": 5000.0}</msg>
+<msg timestamp="20151116 23:38:08.129" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.130" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/timeouts/implicit_wait {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "ms": 0.0}</msg>
+<msg timestamp="20151116 23:38:08.136" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.137" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/url {"url": "http://www.google.com", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436"}</msg>
+<msg timestamp="20151116 23:38:08.772" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.772" level="DEBUG">Opened browser with session id b56ff9b0-8cb2-11e5-9998-ebdb5d272436</msg>
+<msg timestamp="20151116 23:38:08.773" level="TRACE">Return: 1</msg>
+<status status="PASS" endtime="20151116 23:38:08.774" starttime="20151116 23:38:05.903"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="Selenium2Library">
+<doc>Waits until element specified with `locator` is visible.</doc>
+<arguments>
+<arg>name=q</arg>
+<arg>10</arg>
+</arguments>
+<msg timestamp="20151116 23:38:08.777" level="TRACE">Arguments: [ 'name=q' | '10' ]</msg>
+<msg timestamp="20151116 23:38:08.778" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "name", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "q"}</msg>
+<msg timestamp="20151116 23:38:08.818" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.819" level="DEBUG">GET http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/element/:wdc:1447713488814/displayed {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "id": ":wdc:1447713488814"}</msg>
+<msg timestamp="20151116 23:38:08.886" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.887" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:08.887" starttime="20151116 23:38:08.776"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>name=q</arg>
+<arg>I Love Python</arg>
+</arguments>
+<msg timestamp="20151116 23:38:08.890" level="TRACE">Arguments: [ 'name=q' | 'I Love Python' ]</msg>
+<msg timestamp="20151116 23:38:08.891" level="INFO">Typing text 'I Love Python' into text field 'name=q'</msg>
+<msg timestamp="20151116 23:38:08.892" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "name", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "q"}</msg>
+<msg timestamp="20151116 23:38:08.910" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.911" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/element/:wdc:1447713488814/clear {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "id": ":wdc:1447713488814"}</msg>
+<msg timestamp="20151116 23:38:08.972" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:08.973" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/element/:wdc:1447713488814/value {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "id": ":wdc:1447713488814", "value": ["I", " ", "L", "o", "v", "e", " ", "P", "y", "t", "h", "o", "n"]}</msg>
+<msg timestamp="20151116 23:38:09.136" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:09.137" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:09.138" starttime="20151116 23:38:08.889"></status>
+</kw>
+<kw name="Press Key" library="Selenium2Library">
+<doc>Simulates user pressing key on element identified by `locator`.</doc>
+<arguments>
+<arg>name=q</arg>
+<arg>ENTER</arg>
+</arguments>
+<msg timestamp="20151116 23:38:09.140" level="TRACE">Arguments: [ 'name=q' | 'ENTER' ]</msg>
+<msg timestamp="20151116 23:38:09.142" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "name", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "q"}</msg>
+<msg timestamp="20151116 23:38:09.160" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:09.162" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/element/:wdc:1447713488814/value {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "id": ":wdc:1447713488814", "value": ["E", "N", "T", "E", "R"]}</msg>
+<msg timestamp="20151116 23:38:09.241" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:09.242" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:09.242" starttime="20151116 23:38:09.139"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="Selenium2Library">
+<doc>Waits until `text` appears on current page.</doc>
+<arguments>
+<arg>I Love Python</arg>
+</arguments>
+<msg timestamp="20151116 23:38:09.245" level="TRACE">Arguments: [ 'I Love Python' ]</msg>
+<msg timestamp="20151116 23:38:09.246" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:09.284" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:09.484" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:09.505" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:09.706" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:09.726" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:09.927" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:09.946" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:10.147" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:10.167" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:10.368" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:10.390" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:10.591" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:10.613" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:10.814" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:10.835" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:11.036" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:11.057" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:11.258" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:11.278" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:11.479" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:11.505" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:11.705" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:11.724" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:11.926" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:11.948" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:12.149" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:12.174" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:12.375" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:12.401" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:12.602" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:12.623" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:12.824" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:12.845" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:13.046" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:13.067" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:13.268" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:13.290" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:13.491" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:13.516" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:13.716" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:13.736" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:13.937" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:13.958" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:14.160" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:14.181" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:14.381" level="DEBUG">POST http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/elements {"using": "xpath", "sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436", "value": "//*[contains(., 'I Love Python')]"}</msg>
+<msg timestamp="20151116 23:38:14.408" level="DEBUG">Finished Request</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20151116 23:38:14.410" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20151116 23:38:14.415" level="DEBUG">GET http://127.0.0.1:52776/wd/hub/session/b56ff9b0-8cb2-11e5-9998-ebdb5d272436/screenshot {"sessionId": "b56ff9b0-8cb2-11e5-9998-ebdb5d272436"}</msg>
+<msg timestamp="20151116 23:38:14.718" level="DEBUG">Finished Request</msg>
+<msg timestamp="20151116 23:38:14.721" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-3.png"&gt;&lt;img src="selenium-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg timestamp="20151116 23:38:14.723" level="TRACE">Return: None</msg>
+<status status="PASS" endtime="20151116 23:38:14.724" starttime="20151116 23:38:14.409"></status>
+</kw>
+<msg timestamp="20151116 23:38:14.727" level="FAIL">Text 'I Love Python' did not appear in 5 seconds</msg>
+<msg timestamp="20151116 23:38:14.728" level="DEBUG">Traceback (most recent call last):
+  File "&lt;decorator-gen-156&gt;", line 2, in wait_until_page_contains
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\keywordgroup.py", line 15, in _run_on_failure_decorator
+    return method(*args, **kwargs)
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\_waiting.py", line 46, in wait_until_page_contains
+    self._wait_until(timeout, error, self._is_text_present, text)
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\_waiting.py", line 231, in _wait_until
+    self._wait_until_no_error(timeout, wait_func)
+  File "C:\Python27\lib\site-packages\Selenium2Library\keywords\_waiting.py", line 240, in _wait_until_no_error
+    raise AssertionError(timeout_error)</msg>
+<status status="FAIL" endtime="20151116 23:38:14.729" starttime="20151116 23:38:09.244"></status>
+</kw>
+<status status="FAIL" endtime="20151116 23:38:14.730" critical="yes" starttime="20151116 23:38:05.901">Text 'I Love Python' did not appear in 5 seconds</status>
+</test>
+<status status="FAIL" endtime="20151116 23:38:14.736" starttime="20151116 23:37:31.152"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="1">Critical Tests</stat>
+<stat fail="2" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="S2L Test" pass="1">S2L Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

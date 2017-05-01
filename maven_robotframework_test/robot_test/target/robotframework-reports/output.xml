@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 2.8.1 (Jython 2.5.3 on java1.8.0_05)" generated="20151109 17:51:03.006">
+<suite source="C:\maven_robotframework_test\robot_test\src\test\resources\robotframework" name="Robotframework" id="s1">
+<suite source="C:\maven_robotframework_test\robot_test\src\test\resources\robotframework\quickstart" name="Quickstart" id="s1-s1">
+<suite source="C:\maven_robotframework_test\robot_test\src\test\resources\robotframework\quickstart\quickstart.txt" name="Quickstart" id="s1-s1-s1">
+<test name="User can create an account and log in" id="s1-s1-s1-t1">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:03.457">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:03.458" starttime="20151109 17:51:03.453" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:03.459" starttime="20151109 17:51:03.451" status="PASS"></status>
+</kw>
+<kw type="kw" name="Create valid user">
+<doc></doc>
+<arguments>
+<arg>fred</arg>
+<arg>P4ssw0rd</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:03.633" starttime="20151109 17:51:03.462" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>SUCCESS</arg>
+</arguments>
+<status endtime="20151109 17:51:03.634" starttime="20151109 17:51:03.633" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:03.635" starttime="20151109 17:51:03.459" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Attempt To Login With Credentials">
+<doc></doc>
+<arguments>
+<arg>fred</arg>
+<arg>P4ssw0rd</arg>
+</arguments>
+<status endtime="20151109 17:51:03.809" starttime="20151109 17:51:03.636" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Logged In</arg>
+</arguments>
+<status endtime="20151109 17:51:03.811" starttime="20151109 17:51:03.810" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:03.812" starttime="20151109 17:51:03.448" status="PASS"></status>
+</test>
+<test name="User cannot log in with bad password" id="s1-s1-s1-t2">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:03.822">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:03.822" starttime="20151109 17:51:03.818" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:03.823" starttime="20151109 17:51:03.816" status="PASS"></status>
+</kw>
+<kw type="kw" name="Create valid user">
+<doc></doc>
+<arguments>
+<arg>betty</arg>
+<arg>P4ssw0rd</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:04.010" starttime="20151109 17:51:03.826" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>SUCCESS</arg>
+</arguments>
+<status endtime="20151109 17:51:04.013" starttime="20151109 17:51:04.012" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.014" starttime="20151109 17:51:03.824" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Attempt To Login With Credentials">
+<doc></doc>
+<arguments>
+<arg>betty</arg>
+<arg>wrong</arg>
+</arguments>
+<status endtime="20151109 17:51:04.182" starttime="20151109 17:51:04.015" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Access Denied</arg>
+</arguments>
+<status endtime="20151109 17:51:04.184" starttime="20151109 17:51:04.183" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:04.185" starttime="20151109 17:51:03.814" status="PASS"></status>
+</test>
+<test name="User can change password" id="s1-s1-s1-t3">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:04.199">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:04.200" starttime="20151109 17:51:04.197" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.201" starttime="20151109 17:51:04.195" status="PASS"></status>
+</kw>
+<kw type="kw" name="Given a user has a valid account">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Create valid user">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:04.391" starttime="20151109 17:51:04.205" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>SUCCESS</arg>
+</arguments>
+<status endtime="20151109 17:51:04.393" starttime="20151109 17:51:04.392" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.393" starttime="20151109 17:51:04.203" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.394" starttime="20151109 17:51:04.201" status="PASS"></status>
+</kw>
+<kw type="kw" name="When she changes her password">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="LoginLibrary.Change Password">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>${NEW PASSWORD}</arg>
+</arguments>
+<status endtime="20151109 17:51:04.579" starttime="20151109 17:51:04.396" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>SUCCESS</arg>
+</arguments>
+<status endtime="20151109 17:51:04.581" starttime="20151109 17:51:04.580" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.582" starttime="20151109 17:51:04.395" status="PASS"></status>
+</kw>
+<kw type="kw" name="Then she can log in with the new password">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="Login">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${NEW PASSWORD}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Attempt To Login With Credentials">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:04.750" starttime="20151109 17:51:04.588" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Logged In</arg>
+</arguments>
+<status endtime="20151109 17:51:04.752" starttime="20151109 17:51:04.751" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.752" starttime="20151109 17:51:04.584" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.753" starttime="20151109 17:51:04.583" status="PASS"></status>
+</kw>
+<kw type="kw" name="And she cannot use the old password anymore">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="LoginLibrary.Attempt To Login With Credentials">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<status endtime="20151109 17:51:04.916" starttime="20151109 17:51:04.756" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Access Denied</arg>
+</arguments>
+<status endtime="20151109 17:51:04.918" starttime="20151109 17:51:04.917" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.918" starttime="20151109 17:51:04.754" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:04.919" starttime="20151109 17:51:04.186" status="PASS"></status>
+</test>
+<test name="User status is stored in database" id="s1-s1-s1-t4">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:04.928">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:04.928" starttime="20151109 17:51:04.925" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:04.929" starttime="20151109 17:51:04.923" status="PASS"></status>
+</kw>
+<kw type="kw" name="Create valid user">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.118" starttime="20151109 17:51:04.932" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>SUCCESS</arg>
+</arguments>
+<status endtime="20151109 17:51:05.120" starttime="20151109 17:51:05.119" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.120" starttime="20151109 17:51:04.930" status="PASS"></status>
+</kw>
+<kw type="kw" name="Database Should Contain">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>Inactive</arg>
+</arguments>
+<kw type="kw" name="${database} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:05.125">Getting file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<msg level="INFO" timestamp="20151109 17:51:05.127">${database} = janedoe	J4n3D0e	Inactive
+</msg>
+<status endtime="20151109 17:51:05.127" starttime="20151109 17:51:05.124" status="PASS"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${database}</arg>
+<arg>${username}\t${password}\t${status}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.130" starttime="20151109 17:51:05.128" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.131" starttime="20151109 17:51:05.121" status="PASS"></status>
+</kw>
+<kw type="kw" name="Login">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Attempt To Login With Credentials">
+<doc></doc>
+<arguments>
+<arg>${username}</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.303" starttime="20151109 17:51:05.134" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Logged In</arg>
+</arguments>
+<status endtime="20151109 17:51:05.304" starttime="20151109 17:51:05.303" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.305" starttime="20151109 17:51:05.131" status="PASS"></status>
+</kw>
+<kw type="kw" name="Database Should Contain">
+<doc></doc>
+<arguments>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<arg>Active</arg>
+</arguments>
+<kw type="kw" name="${database} = OperatingSystem.Get File">
+<doc>Returns the contents of a specified file.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:05.309">Getting file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<msg level="INFO" timestamp="20151109 17:51:05.310">${database} = janedoe	J4n3D0e	Active
+</msg>
+<status endtime="20151109 17:51:05.310" starttime="20151109 17:51:05.308" status="PASS"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Should Contain">
+<doc>Fails if `item1` does not contain `item2` one or more times.</doc>
+<arguments>
+<arg>${database}</arg>
+<arg>${username}\t${password}\t${status}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.313" starttime="20151109 17:51:05.311" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.314" starttime="20151109 17:51:05.305" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>database</tag>
+<tag>quickstart</tag>
+<tag>variables</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:05.314" starttime="20151109 17:51:04.921" status="PASS"></status>
+</test>
+<test name="Too short password" id="s1-s1-s1-t5">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:05.322">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:05.323" starttime="20151109 17:51:05.320" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.323" starttime="20151109 17:51:05.318" status="PASS"></status>
+</kw>
+<kw type="kw" name="Creating user with invalid password should fail">
+<doc></doc>
+<arguments>
+<arg>abCD5</arg>
+<arg>${PWD INVALID LENGTH}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>example</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.491" starttime="20151109 17:51:05.326" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Creating user failed: ${error}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.492" starttime="20151109 17:51:05.491" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.493" starttime="20151109 17:51:05.324" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:05.493" starttime="20151109 17:51:05.316" status="PASS"></status>
+</test>
+<test name="Too long password" id="s1-s1-s1-t6">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:05.502">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:05.506" starttime="20151109 17:51:05.499" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.507" starttime="20151109 17:51:05.497" status="PASS"></status>
+</kw>
+<kw type="kw" name="Creating user with invalid password should fail">
+<doc></doc>
+<arguments>
+<arg>abCD567890123</arg>
+<arg>${PWD INVALID LENGTH}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>example</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.673" starttime="20151109 17:51:05.511" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Creating user failed: ${error}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.675" starttime="20151109 17:51:05.673" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.675" starttime="20151109 17:51:05.508" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:05.676" starttime="20151109 17:51:05.495" status="PASS"></status>
+</test>
+<test name="Password without lowercase letters" id="s1-s1-s1-t7">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:05.684">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:05.685" starttime="20151109 17:51:05.681" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.685" starttime="20151109 17:51:05.680" status="PASS"></status>
+</kw>
+<kw type="kw" name="Creating user with invalid password should fail">
+<doc></doc>
+<arguments>
+<arg>123DEFG</arg>
+<arg>${PWD INVALID CONTENT}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>example</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.850" starttime="20151109 17:51:05.688" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Creating user failed: ${error}</arg>
+</arguments>
+<status endtime="20151109 17:51:05.852" starttime="20151109 17:51:05.851" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.853" starttime="20151109 17:51:05.686" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:05.853" starttime="20151109 17:51:05.677" status="PASS"></status>
+</test>
+<test name="Password without capital letters" id="s1-s1-s1-t8">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:05.861">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:05.862" starttime="20151109 17:51:05.858" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:05.862" starttime="20151109 17:51:05.857" status="PASS"></status>
+</kw>
+<kw type="kw" name="Creating user with invalid password should fail">
+<doc></doc>
+<arguments>
+<arg>abcd56789</arg>
+<arg>${PWD INVALID CONTENT}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>example</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:06.030" starttime="20151109 17:51:05.865" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Creating user failed: ${error}</arg>
+</arguments>
+<status endtime="20151109 17:51:06.032" starttime="20151109 17:51:06.031" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:06.032" starttime="20151109 17:51:05.863" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:06.034" starttime="20151109 17:51:05.855" status="PASS"></status>
+</test>
+<test name="Password without numbers" id="s1-s1-s1-t9">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:06.041">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:06.042" starttime="20151109 17:51:06.039" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:06.042" starttime="20151109 17:51:06.037" status="PASS"></status>
+</kw>
+<kw type="kw" name="Creating user with invalid password should fail">
+<doc></doc>
+<arguments>
+<arg>AbCdEfGh</arg>
+<arg>${PWD INVALID CONTENT}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>example</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:06.229" starttime="20151109 17:51:06.049" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Creating user failed: ${error}</arg>
+</arguments>
+<status endtime="20151109 17:51:06.231" starttime="20151109 17:51:06.229" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:06.231" starttime="20151109 17:51:06.043" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:06.232" starttime="20151109 17:51:06.035" status="PASS"></status>
+</test>
+<test name="Password with special characters" id="s1-s1-s1-t10">
+<kw type="setup" name="Clear login database">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="OperatingSystem.Remove File">
+<doc>Removes a file with the given path.</doc>
+<arguments>
+<arg>${DATABASE FILE}</arg>
+</arguments>
+<msg level="INFO" html="yes" timestamp="20151109 17:51:06.239">Removed file '&lt;a href="file://c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt"&gt;c:\users\waew\appdata\local\temp\robotframework-quickstart-db.txt&lt;/a&gt;'</msg>
+<status endtime="20151109 17:51:06.240" starttime="20151109 17:51:06.237" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:06.241" starttime="20151109 17:51:06.235" status="PASS"></status>
+</kw>
+<kw type="kw" name="Creating user with invalid password should fail">
+<doc></doc>
+<arguments>
+<arg>abCD56+</arg>
+<arg>${PWD INVALID CONTENT}</arg>
+</arguments>
+<kw type="kw" name="LoginLibrary.Create User">
+<doc></doc>
+<arguments>
+<arg>example</arg>
+<arg>${password}</arg>
+</arguments>
+<status endtime="20151109 17:51:06.408" starttime="20151109 17:51:06.243" status="PASS"></status>
+</kw>
+<kw type="kw" name="LoginLibrary.Status Should Be">
+<doc></doc>
+<arguments>
+<arg>Creating user failed: ${error}</arg>
+</arguments>
+<status endtime="20151109 17:51:06.410" starttime="20151109 17:51:06.409" status="PASS"></status>
+</kw>
+<status endtime="20151109 17:51:06.410" starttime="20151109 17:51:06.241" status="PASS"></status>
+</kw>
+<doc></doc>
+<tags>
+<tag>example</tag>
+<tag>quickstart</tag>
+<tag>smoke</tag>
+</tags>
+<status critical="yes" endtime="20151109 17:51:06.411" starttime="20151109 17:51:06.233" status="PASS"></status>
+</test>
+<doc>Robot Framework is a keyword-driven test automation framework.
+Test cases live in HTML or TSV (tab-separated values) test files
+and make use of keywords implemented in test libraries to drive
+the software under test. Because Robot Framework is flexible and
+extensible, it is ideally suited to testing complex software with
+a variety of interfaces: user interfaces, command line, web
+services, proprietary programming interfaces, etc.
+
+The sample application for this guide is a variation on a classic
+login example: it is a command-line based authentication server
+written in Python. At the moment, the sample application allows
+a user to do three things:
+
+* Create an account with a valid password.
+* Log in with a valid user name and password.
+* Change the password of an existing account.
+
+The application itself is in the sut directory and can be executed
+with a command python sut/login.py.</doc>
+<metadata>
+</metadata>
+<status endtime="20151109 17:51:06.417" starttime="20151109 17:51:03.183" status="PASS"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20151109 17:51:06.431" starttime="20151109 17:51:03.159" status="PASS"></status>
+</suite>
+<doc></doc>
+<metadata>
+</metadata>
+<status endtime="20151109 17:51:06.442" starttime="20151109 17:51:03.009" status="PASS"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="10" fail="0">Critical Tests</stat>
+<stat pass="10" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" doc="" links="" combined="" info="">database</stat>
+<stat pass="9" fail="0" doc="" links="" combined="" info="">example</stat>
+<stat pass="10" fail="0" doc="" links="" combined="" info="">quickstart</stat>
+<stat pass="9" fail="0" doc="" links="" combined="" info="">smoke</stat>
+<stat pass="1" fail="0" doc="" links="" combined="" info="">variables</stat>
+</tag>
+<suite>
+<stat pass="10" fail="0" name="Robotframework" id="s1">Robotframework</stat>
+<stat pass="10" fail="0" name="Quickstart" id="s1-s1">Robotframework.Quickstart</stat>
+<stat pass="10" fail="0" name="Quickstart" id="s1-s1-s1">Robotframework.Quickstart.Quickstart</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

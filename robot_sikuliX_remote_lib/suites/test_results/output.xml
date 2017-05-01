@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20141111 16:22:28.702" generator="Robot 2.8.6 (Python 2.7.6 on win32)">
+<suite source="C:\robot\suites\test.robot" id="s1" name="Test">
+<test id="s1-t1" name="login To Yahoo Mail Test Case">
+<kw type="setup" name="Login To Yahoo Mail">
+<doc>This keyword logs user into Yahoo mail</doc>
+<arguments>
+<arg>${user_name}</arg>
+<arg>${password}</arg>
+</arguments>
+<kw type="kw" name="resource.Internet Explorer Starten">
+<doc></doc>
+<arguments>
+<arg>http://mail.yahoo.com</arg>
+</arguments>
+<kw type="kw" name="OperatingSystem.Set Environment Variable">
+<doc>Sets an environment variable to a specified value.</doc>
+<arguments>
+<arg>no_proxy</arg>
+<arg>127.0.0.1</arg>
+</arguments>
+<msg timestamp="20141111 16:22:51.995" level="INFO">Environment variable 'no_proxy' set to value '127.0.0.1'</msg>
+<status status="PASS" endtime="20141111 16:22:51.995" starttime="20141111 16:22:51.995"></status>
+</kw>
+<kw type="kw" name="OperatingSystem.Start Process">
+<doc>It is recommended to use same keyword from Process library instead.</doc>
+<arguments>
+<arg>${IEDriver}</arg>
+</arguments>
+<msg timestamp="20141111 16:22:52.011" level="INFO">Running command 'C:/Python27/IEDriverServer.exe 2&gt;&amp;1'</msg>
+<status status="PASS" endtime="20141111 16:22:52.011" starttime="20141111 16:22:51.995"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Open Browser">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${portal}</arg>
+<arg>InternetExplorer</arg>
+<arg>None</arg>
+<arg>http://127.0.0.1:5555</arg>
+</arguments>
+<msg timestamp="20141111 16:22:52.011" level="INFO">Opening browser 'InternetExplorer' to base url 'http://mail.yahoo.com' through remote server at 'http://127.0.0.1:5555'</msg>
+<status status="PASS" endtime="20141111 16:23:16.921" starttime="20141111 16:22:52.011"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Maximize Browser Window">
+<doc>Maximizes current browser window.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20141111 16:23:17.073" starttime="20141111 16:23:16.921"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Log To Console">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>\n Beginne Testdurchführung mit Internet Explorer</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:23:17.073" starttime="20141111 16:23:17.073"></status>
+</kw>
+<status status="PASS" endtime="20141111 16:23:17.073" starttime="20141111 16:22:51.995"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>username</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:23:17.513" starttime="20141111 16:23:17.073"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>username</arg>
+<arg>${user}</arg>
+</arguments>
+<msg timestamp="20141111 16:23:17.513" level="INFO">Typing text 'fotzen_user' into text field 'username'</msg>
+<status status="PASS" endtime="20141111 16:23:18.883" starttime="20141111 16:23:17.513"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Password">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>passwd</arg>
+<arg>${pass}</arg>
+</arguments>
+<msg timestamp="20141111 16:23:18.883" level="INFO">Typing password into text field 'passwd'</msg>
+<status status="PASS" endtime="20141111 16:23:19.503" starttime="20141111 16:23:18.883"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Click Button">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>.save</arg>
+</arguments>
+<msg timestamp="20141111 16:23:19.503" level="INFO">Clicking button '.save'.</msg>
+<status status="PASS" endtime="20141111 16:23:21.148" starttime="20141111 16:23:19.503"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>toolbar</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:23:26.535" starttime="20141111 16:23:21.148"></status>
+</kw>
+<kw type="kw" name="Remote.Click Object">
+<doc></doc>
+<arguments>
+<arg>${data_path}\\home.png</arg>
+<arg>${timeout}</arg>
+<arg>${similarity}</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:23:57.160" starttime="20141111 16:23:26.537"></status>
+</kw>
+<kw type="kw" name="BuiltIn.Sleep">
+<doc>Pauses the test executed for the given time.</doc>
+<arguments>
+<arg>1</arg>
+</arguments>
+<msg timestamp="20141111 16:23:58.160" level="INFO">Slept 1 second</msg>
+<status status="PASS" endtime="20141111 16:23:58.160" starttime="20141111 16:23:57.160"></status>
+</kw>
+<status status="PASS" endtime="20141111 16:23:58.160" starttime="20141111 16:22:51.995"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Wait Until Page Contains Element">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>UHSearchBox</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:23:58.447" starttime="20141111 16:23:58.160"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Input Text">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>UHSearchBox</arg>
+<arg>ENGLISH</arg>
+</arguments>
+<msg timestamp="20141111 16:23:58.447" level="INFO">Typing text 'ENGLISH' into text field 'UHSearchBox'</msg>
+<status status="PASS" endtime="20141111 16:24:01.197" starttime="20141111 16:23:58.447"></status>
+</kw>
+<kw type="kw" name="Remote.Object Exists">
+<doc></doc>
+<arguments>
+<arg>${data_path}/search_box_left.png</arg>
+<arg>${similarity}</arg>
+<arg>${timeout}</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:24:02.947" starttime="20141111 16:24:01.197"></status>
+</kw>
+<kw type="teardown" name="Tear Test Down">
+<doc></doc>
+<arguments>
+</arguments>
+<kw type="kw" name="BuiltIn.Run Keyword If Test Failed">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" endtime="20141111 16:24:02.957" starttime="20141111 16:24:02.957"></status>
+</kw>
+<kw type="kw" name="Selenium2Library.Close All Browsers">
+<doc>Closes all open browsers and resets the browser cache.</doc>
+<arguments>
+</arguments>
+<status status="PASS" endtime="20141111 16:24:03.167" starttime="20141111 16:24:02.957"></status>
+</kw>
+<status status="PASS" endtime="20141111 16:24:03.167" starttime="20141111 16:24:02.947"></status>
+</kw>
+<doc></doc>
+<tags>
+</tags>
+<status status="PASS" endtime="20141111 16:24:03.167" critical="yes" starttime="20141111 16:22:51.995"></status>
+</test>
+<doc>Integrating Selenium, Sikuli into Robot Framework</doc>
+<metadata>
+</metadata>
+<status status="PASS" endtime="20141111 16:24:03.167" starttime="20141111 16:22:30.558"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" pass="1" id="s1" name="Test">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

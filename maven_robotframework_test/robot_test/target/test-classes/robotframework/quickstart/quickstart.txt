@@ -1,0 +1,114 @@
+*** Settings ***
+Documentation     Robot Framework is a keyword-driven test automation framework. 
+...               Test cases live in HTML or TSV (tab-separated values) test files 
+...               and make use of keywords implemented in test libraries to drive 
+...               the software under test. Because Robot Framework is flexible and 
+...               extensible, it is ideally suited to testing complex software with 
+...               a variety of interfaces: user interfaces, command line, web 
+...               services, proprietary programming interfaces, etc.
+...               
+...               The sample application for this guide is a variation on a classic 
+...               login example: it is a command-line based authentication server 
+...               written in Python. At the moment, the sample application allows 
+...               a user to do three things:
+...               
+...               * Create an account with a valid password.
+...               * Log in with a valid user name and password.
+...               * Change the password of an existing account.
+...               
+...               The application itself is in the sut directory and can be executed 
+...               with a command python sut/login.py.
+Test Setup        Clear Login Database
+Test Teardown      
+Force Tags        quickstart    
+Default Tags      example    smoke
+Library           OperatingSystem
+Library           testlibs/LoginLibrary.py
+
+*** Variables ***
+${USERNAME}               janedoe
+${PASSWORD}               J4n3D0e
+${NEW PASSWORD}           e0D3n4J
+${DATABASE FILE}          ${TEMPDIR}${/}robotframework-quickstart-db.txt
+${PWD INVALID LENGTH}     Password must be 7-12 characters long
+${PWD INVALID CONTENT}    Password must be a combination of lowercase and uppercase letters and numbers
+
+*** Test Cases ***
+User can create an account and log in
+    Create Valid User    fred    P4ssw0rd
+    Attempt to Login with Credentials    fred    P4ssw0rd
+    Status Should Be    Logged In    
+
+User cannot log in with bad password
+    Create Valid User    betty    P4ssw0rd
+    Attempt to Login with Credentials    betty    wrong
+    Status Should Be    Access Denied    
+
+User can change password
+    Given a user has a valid account
+    when she changes her password
+    then she can log in with the new password
+    and she cannot use the old password anymore
+
+User status is stored in database
+    [Tags]    variables    database    
+    Create Valid User    ${USERNAME}    ${PASSWORD}    
+    Database Should Contain    ${USERNAME}    ${PASSWORD}    Inactive
+    Login    ${USERNAME}    ${PASSWORD}    
+    Database Should Contain    ${USERNAME}    ${PASSWORD}    Active
+
+Too short password
+    Creating user with invalid password should fail    abCD5    ${PWD INVALID LENGTH}
+
+Too long password
+    Creating user with invalid password should fail    abCD567890123    ${PWD INVALID LENGTH}
+
+Password without lowercase letters
+    Creating user with invalid password should fail    123DEFG    ${PWD INVALID CONTENT}
+
+Password without capital letters
+    Creating user with invalid password should fail    abcd56789    ${PWD INVALID CONTENT}
+
+Password without numbers
+    Creating user with invalid password should fail    AbCdEfGh    ${PWD INVALID CONTENT}
+
+Password with special characters
+    Creating user with invalid password should fail    abCD56+    ${PWD INVALID CONTENT}
+
+*** Keywords ***
+Clear login database
+    Remove file    ${DATABASE FILE}
+        
+Create valid user
+    [Arguments]    ${username}    ${password}
+    Create user    ${username}    ${password}
+    Status should be    SUCCESS
+        
+Creating user with invalid password should fail
+    [Arguments]    ${password}    ${error}
+    Create user    example    ${password}
+    Status should be    Creating user failed: ${error}    
+
+Login
+    [Arguments]    ${username}    ${password}
+    Attempt to login with credentials    ${username}    ${password}
+    Status should be    Logged In    
+
+Given a user has a valid account
+    Create valid user    ${USERNAME}    ${PASSWORD}
+    
+When she changes her password    Change password    ${USERNAME}    ${PASSWORD}
+    ...                              ${NEW PASSWORD}    
+    Status should be    SUCCESS    
+    
+Then she can log in with the new password
+    Login    ${USERNAME}    ${NEW PASSWORD}
+
+And she cannot use the old password anymore
+    Attempt to login with credentials    ${USERNAME}    ${PASSWORD}
+    Status should be    Access Denied
+
+Database Should Contain
+    [Arguments]    ${username}    ${password}    ${status}
+    ${database} =    Get File    ${DATABASE FILE}    
+    Should Contain    ${database}    ${username}\t${password}\t${status}    

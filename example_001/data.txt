@@ -1,0 +1,5 @@
+Robotframework has several built-in libraries that add a lot of functionality. Two that you can use for this task are the OperatingSystem library and the String library. 
+
+You can use the keyword Get File from the OperatingSystem library to read the file, and you can use the Split to Lines keyword from the String library to convert the file contents to a list of lines. Then it's just a matter of looping over the lines using a for loop. 
+
+For example:
