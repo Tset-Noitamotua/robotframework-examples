@@ -1,3 +1,8 @@
+# HOW TO - return values from keywords
+
+Robot Framework code below should be self-explanatory ;-)
+
+```robotframework
 # Returning variables from keyword
 #
 # run this with `robot -L TRACE How_To_return_values_from_keyword.robot
@@ -34,3 +39,4 @@ all animals
   #Log To Console    \List of Dogs:
   #Log  ${dog_list}\n  console=True
   Return From Keyword  ${animal_list}
+```
