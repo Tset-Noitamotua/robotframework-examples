@@ -1,0 +1,14 @@
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Mac
+.DS_Store
+
+# QS
+**/Results/**
+**/results/**
+*.html
+*.xml
+*.pyc

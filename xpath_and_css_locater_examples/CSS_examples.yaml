@@ -1,0 +1,38 @@
+
+# CSS EXAMPLES
+# taken from Vaadin Theme Demo
+LABEL:
+  default_label: xpath=//div[text()='Sample label - also contains a tool tip, hover the cursor over this text.']
+  default_expected_class: v-label v-widget v-label-undef-w
+
+  h1_label: css=div.v-label.v-widget.v-label-undef-w.h1.v-label-h1
+  h1_expected_class: v-label v-widget v-label-undef-w h1 v-label-h1
+
+  h2_label: css=div.v-label.v-widget.v-label-undef-w.h2.v-label-h2
+  h2_expected_class: v-label v-widget v-label-undef-w h2 v-label-h2
+
+  h3_label: css=div.v-label.v-widget.v-label-undef-w.h3.v-label-h3
+  h3_expected_class: v-label v-widget v-label-undef-w h3 v-label-h3
+
+  h4_label: css=div.v-label.v-widget.v-label-undef-w.h4.v-label-h4
+  h4_expected_class: v-label v-widget v-label-undef-w h4 v-label-h4
+
+  tiny_label: css=div.v-label.v-widget.v-label-undef-w.tiny.v-label-tiny
+  tiny_expected_class: v-label v-widget v-label-undef-w tiny v-label-tiny
+
+  small_label: css=div.v-label.v-widget.v-label-undef-w.small.v-label-small
+  small_expected_class: v-label v-widget v-label-undef-w small v-label-small
+
+
+BUTTON:
+  default: xpath=//span[text()='Component caption']/ancestor::div[@role='button' and @class='v-button v-widget']
+  default_expected_class: v-button v-widget
+
+  primary: xpath=//span[text()='Component caption']/ancestor::div[@role='button' and @class='v-button v-widget primary v-button-primary']
+  primary_expected_class: v-button v-widget primary v-button-primary
+
+  friendly: xpath=//span[text()='Component caption']/ancestor::div[@role='button' and @class='v-button v-widget friendly v-button-friendly']
+  friendly_expected_class: v-button v-widget friendly v-button-friendly
+
+  danger: xpath=//span[text()='Component caption']/ancestor::div[@role='button' and @class='v-button v-widget danger v-button-danger']
+  danger_expected_class: v-button v-widget danger v-button-danger

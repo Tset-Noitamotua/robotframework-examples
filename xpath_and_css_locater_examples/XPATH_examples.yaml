@@ -1,0 +1,59 @@
+XPATH_EXAMPLES:
+
+    # XPATH TUTORIAL:  http://www.w3schools.com/xsl/xpath_syntax.asp
+    # XPATH FUNCTIONS: http://www.w3schools.com/xsl/xsl_functions.asp
+
+    example_001:  xpath=//HTML_TAG[text()='some text']/ancestor::HTML_TAG//HTML_TAG[index]
+    example_001c: xpath=//span[text()='some text']/ancestor::tr//input[2]
+
+    example_002:  xpath=//*[@ATTRIBUTE="value"]//*[@ATTRIBUTE='value']
+    example_002c: xpath=//*[@id="newPanel"]//*[@name='firstName']
+
+    example_003:  xpath=//*[@ATTRIBUTE="value" and @ATTRIBUTE="value"]
+    example_003c: xpath=//*[@name="firstName" and @age="30"]
+
+    # bad example and corresponding enhancement
+    example_004b:  xpath=//div[@id='great_id']/div/div/div/div/h1
+    example_004e: xpath=//div[@id='great_id']//h1
+
+    # Some div element where some attribute has a value of 'User name:'
+    # (ignoring funky spacing), then go to the parent, and get the element
+    # of type input
+    example_005c: xpath=//div[normalize-space(.)='User name:']/../input
+    # Same as above but not SOME attribute but a SPECIFIC attribute, e.g. here
+    # the attribute named "label" with value "User name:"
+    example_006c: xpath=//div[normalize-space(@label)='User name:"]/../input
+
+    # Some tag with some text and possible spaces
+    # e.g. <button class="mdl-button">      Register now</button>
+    # [text()='Register now'] would not work because of spaces
+    example_0077: xpath=//button[normalize-space(text())='Register now']
+
+    # If you don't know the exact value of an attribute you can look for a
+    # substring of the concrete value. Here only '<span>' with 'title'
+    # attribute with given value 'Dauerauftrage ...' will be searched.
+    example_007c: xpath=//span[contains(@title, 'Dauerauftrag 005450040018')]
+    # Here '<span>' with any attribute with given value will be searched.
+    example_008c: xpath=//span[contains(., 'Dauerauftrag 005450040018')]
+
+    example_009c: xpath=//a[contains(@class, 'doc_link')]
+    example_010c: xpath=//a[contains(@class, 'doc_link')]/div[contains(@class, 'object_cell_hover')]
+
+    example_011c: xpath=//label[text()='Kundenauftrag']/parent::span/input
+    example_012c: xpath=//span[text()='Kontierungsobjekt']/ancestor::tr//input
+    example_013c: xpath=//img[contains(@src, 'portal_add.gif')]/../..
+
+    # search the hole page for given text in lower-case
+    example_014c: xpath=//*[lower-case(text()) = "your text here"]
+
+    example_015c: xpath=//*[@class='name'][text()='Mr. Smoke Test User']/../..//*[@class='phone_number'][text()='222-222-2222']
+    example_016c: xpath=//*[@class='name'][normalize-space(.)='Mr. Smoke Test User']/../..//*[@class='phone_number'][text()='222-222-2222']
+    example_017c: xpath=.//*[contains(@class, 'FullName')][text()='Mr. Smoke Test User']/../..//*[@class='phone_number'][text()='222-222-2222']
+
+    example_018c: xpath=//iframe[contains(@id, 'fancybox-frame’)]
+    example_018css: css=iframe[id*='fancybox-frame’]
+
+    example_019c: xpath=.//*[@id='globalWarehouseSelect_chosen']/a/div/b | "3"
+    example_020c: xpath=//div[text()='Username and/or password is incorrect']
+
+    example_021c: xpath=//td/img[contains(@src, 'edit.gif')]
