@@ -1,7 +1,7 @@
 *** Settings ***
 | Library | RequestsLibrary
 #| Library | Collections
- 
+
 *** Test Cases ***
 001 GET (extern)
 | | [Documentation] | GET http://httpbin.org/headers
